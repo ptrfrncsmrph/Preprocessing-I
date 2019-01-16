@@ -116,10 +116,10 @@ body {
 
 a {
   text-decoration: none;
-  color: @red;
+  color: @dark;
   transition: 200ms;
   &:hover {
-    color: lighten(@red, 15%);
+    color: @red;
   }
 }
 
@@ -184,41 +184,43 @@ nav.top-nav {
     margin-bottom: 1rem;
   }
   a {
-    outline: 1px solid blue;
+    // outline: 1px solid magenta;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
+    position: relative;
     overflow: hidden;
     padding: 0.5rem 0;
     display: inline;
     .expand-parent {
       overflow: hidden;
     }
+    &:focus .expand, &:hover .expand {
+      transform: translateX(0%);
+      transition-delay: 0s;
+    }
+    .expand {
+      transition: all 0.5s ease;
+      transform: translateX(100%);
+      transition-delay: 0.5s;
+    }
   }
-}
-
-.expand {
-  transition: all 0.5s ease;
-  transform: translateX(100%);
-  transition-delay: 0.5s;
-}
-
-.top-nav a:focus .expand, .top-nav a:hover .expand {
-  transform: translateX(0%);
-  transition-delay: 0s;
-}
-
-.expand:after {
-  content: "\00a0";
 }
 
 .skills ul, .workflow ul {
   li {
+    transition: 200ms;
+    cursor: pointer;
     display: inline-block;
-    padding: 0 0.8rem;
+    padding: 0.1rem 0.8rem;
+    font-size: 0.9rem;
     background: fadeout(@red, 90%);
     border-radius: 1rem;
+    margin: 0.2rem 0.1rem;
+    &:hover {
+      background: @dark;
+      color: @light;
+    }
   }
 }
 
@@ -234,11 +236,3 @@ svg {
   max-height: var(--img-size);
   max-width: var(--img-size);
 }
-
-// ul {
-//   padding: 1rem;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: flex-end;
-//   list-style: none;
-// }
