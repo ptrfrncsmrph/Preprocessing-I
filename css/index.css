@@ -137,11 +137,9 @@ table {
 }
 h1,
 h2,
-h3,
-h4,
-h5,
-h6 {
+h3 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  margin-bottom: calc(1.25rem - 0.25em);
 }
 h1 {
   font-weight: 100;
@@ -158,7 +156,9 @@ h3 {
 h4,
 h5,
 h6 {
-  font-weight: 600;
+  float: left;
+  margin-right: 1rem;
+  font-weight: 900;
   font-size: 1rem;
 }
 html,
@@ -177,24 +177,54 @@ main {
   max-width: 100%;
   width: 600px;
 }
+@media (max-width: 500px) {
+  main {
+    padding: 1rem 4vw;
+  }
+}
 main > * {
   grid-column-start: 1;
   grid-column-end: -1;
 }
 header {
-  outline: 1px solid red;
   grid-row-start: 1;
 }
+@media (max-width: 500px) {
+  header {
+    grid-row-start: auto;
+  }
+}
+section {
+  margin-bottom: 1rem;
+}
+p {
+  margin-bottom: 0.5rem;
+}
 section.about {
-  outline: 3px solid greenyellow;
   grid-column-start: 1;
+  grid-column-end: 6;
   grid-row-start: 2;
 }
+@media (max-width: 500px) {
+  section.about {
+    grid-column-end: -1;
+    grid-row-start: auto;
+  }
+}
 nav.top-nav {
-  outline: 2px solid magenta;
+  display: flex;
+  flex-direction: column;
   grid-column-start: 6;
   grid-column-end: 9;
   grid-row-start: 2;
+}
+@media (max-width: 500px) {
+  nav.top-nav {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 1;
+    margin-bottom: 1rem;
+  }
 }
 textarea {
   width: 100%;
