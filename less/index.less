@@ -103,7 +103,6 @@ main {
   grid-auto-flow: row;
   display: grid;
   max-width: 100%;
-  margin: auto;
   width: @main-width;
 }
 
@@ -111,8 +110,8 @@ main>* {
   grid-column: 1 / -1;
 }
 
-header {
-  grid-column: 2 / 3;
+main>header {
+  grid-column: 2 / 3 !important;
   outline: 1px solid red;
 }
 

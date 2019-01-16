@@ -176,14 +176,13 @@ main {
   grid-auto-flow: row;
   display: grid;
   max-width: 100%;
-  margin: auto;
   width: 600px;
 }
 main > * {
   grid-column: -1;
 }
-header {
-  grid-column: 0.66666667;
+main > header {
+  grid-column: 0.66666667 !important;
   outline: 1px solid red;
 }
 textarea {
