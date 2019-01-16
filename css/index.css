@@ -130,6 +130,11 @@ table {
 * {
   box-sizing: border-box;
 }
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 h1,
 h2,
 h3,
@@ -164,14 +169,18 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10rem;
 }
 main {
-  grid-template-columns: 600px;
+  padding-top: 20vh;
+  grid-template-columns: repeat(8, 1fr);
   grid-auto-flow: row;
   display: grid;
   max-width: 100%;
   margin: auto;
+  width: 600px;
+}
+main > * {
+  grid-column: -1;
 }
 header {
   grid-column: 0.66666667;
