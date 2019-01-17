@@ -254,6 +254,7 @@ nav.top-nav {
 nav.top-nav a {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   position: relative;
   overflow: hidden;
@@ -261,12 +262,15 @@ nav.top-nav a {
   display: inline;
 }
 nav.top-nav a .expand-parent {
+  display: inline-block;
+  justify-self: center;
+  margin-bottom: 0.5rem;
   overflow: hidden;
 }
 nav.top-nav a:focus .expand,
 nav.top-nav a:hover .expand {
   transform: translateX(0%);
-  transition-delay: 0s;
+  transition-delay: 0ms;
 }
 nav.top-nav a .expand {
   transition: all 0.5s ease;

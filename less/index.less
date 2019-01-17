@@ -184,20 +184,23 @@ nav.top-nav {
     margin-bottom: 1rem;
   }
   a {
-    // outline: 1px solid magenta;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     position: relative;
     overflow: hidden;
     padding: 0.5rem 0;
     display: inline;
     .expand-parent {
+      display: inline-block;
+      justify-self: center;
+      margin-bottom: 0.5rem;
       overflow: hidden;
     }
     &:focus .expand, &:hover .expand {
       transform: translateX(0%);
-      transition-delay: 0s;
+      transition-delay: 0ms;
     }
     .expand {
       transition: all 0.5s ease;
